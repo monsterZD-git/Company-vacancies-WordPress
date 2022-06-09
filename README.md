@@ -1,4 +1,6 @@
-# wordpress wvcl plugin
+# Wordpress plugin Company vacancies
+
+The plugin is designed to display a list of vacancies on the site.
 
 With Company vacancies, you can get information about vacancies from the HeadHunter API, as well as use the HeadHunter functionality for your site.
 The plugin allows you to display a list of vacancies from the official HeadHunter website via API.
