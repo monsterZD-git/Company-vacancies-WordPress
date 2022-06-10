@@ -54,7 +54,7 @@ class wvcl_Admin_Save_Settings {
 	public $options = array();
 	public $result = array();
 
-	public $url = 'https://application-interface.com/';
+	public $url = 'https://application-interface.com/wvcl/';
 
 	public $recruitment;
 
