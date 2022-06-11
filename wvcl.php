@@ -21,7 +21,7 @@
  * Author URI:        https://vk.com/id554858695
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       wvcl
+ * Text Domain:       company-vacancies
  * Domain Path:       /languages
  */
 

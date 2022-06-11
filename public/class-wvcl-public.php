@@ -72,26 +72,26 @@ class Wvcl_Public {
 		if(count($db_result) > 0) {
 			$result = unserialize($db_result[0]->result);
 			if(is_array($result) && count($result) > 0) {
-				echo '<div class="vacancy-container--found">Вакансий: '.esc_html($db_result[0]->found).'</div>
+				echo '<div class="vacancy-container--found">'.__( 'Vacancies', 'company-vacancies' ).': '.esc_html($db_result[0]->found).'</div>
 						<div class="vacancy-items">';
 							foreach($result as $key => $args){
 								echo '<div class="vacancy-item">
 											<div class="vacancy-name"><a href="' . esc_html($args->alternate_url) . '" title="' . esc_html($args->name) . '" rel="nofollow" target="_blank">' . esc_html($args->name) . '</a></div>
-											<div class="vacancy-salary">' . (!empty($args->salary->from) ? 'от ' . esc_html($args->salary->from) : '') . ' ' . (isset($args->salary->to) ? (!empty(esc_html($args->salary->to)) ? 'до ' . esc_html($args->salary->to) : '') : '') . ' ' . (isset($args->salary->currency) ? $this->wvcl_public_currency(esc_html($args->salary->currency)) : '') . '</div>
+											<div class="vacancy-salary">' . (!empty($args->salary->from) ? __( 'from', 'company-vacancies' ).' ' . esc_html($args->salary->from) : '') . ' ' . (isset($args->salary->to) ? (!empty(esc_html($args->salary->to)) ? __( 'before', 'company-vacancies' ).' ' . esc_html($args->salary->to) : '') : '') . ' ' . (isset($args->salary->currency) ? $this->wvcl_public_currency(esc_html($args->salary->currency)) : '') . '</div>
 											<div class="vacancy-area-name">' . esc_html($args->area->name) . '</div>
 											<div class="vacancy-schedule-name">' . esc_html($args->schedule->name) . '</div>
 											<div class="vacancy-snippet-requirement">' . esc_html($args->snippet->requirement) . '</div>
 											<div class="vacancy-snippet-responsibility">' . esc_html($args->snippet->responsibility) . '</div>
-											<div class="vacancy-respond"><a href="' . esc_html($args->alternate_url) . '" title="' . esc_html($args->name) . '" rel="nofollow" target="_blank">Откликнуться</a></div>
+											<div class="vacancy-respond"><a href="' . esc_html($args->alternate_url) . '" title="' . esc_html($args->name) . '" rel="nofollow" target="_blank">'.__( 'Respond', 'company-vacancies' ).'</a></div>
 										</div>
 									';
 							}
 				echo '</div>';
 			} else {
-				echo '<div class="vacancy-item--noresult">Вакансий не найдено. Попробуйте другие варианты поискового запроса или уберите фильтры</div>';
+				echo '<div class="vacancy-item--noresult">'.__( 'No vacancies found. Try other search options or remove filters', 'company-vacancies' ).'</div>';
 			}
 		} else {
-			echo '<div class="vacancy-item--noresult">Вакансий не найдено. Попробуйте другие варианты поискового запроса или уберите фильтры</div>';
+			echo '<div class="vacancy-item--noresult">'.__( 'No vacancies found. Try other search options or remove filters', 'company-vacancies' ).'</div>';
 		}
 		echo '</div>';
 

@@ -59,8 +59,8 @@ class wvcl_Admin_Settings {
 
 		//Add the menu to the Plugins set of menu items
 		add_menu_page(
-			'Настройки списка вакансий', 					// The title to be displayed in the browser window for this page.
-			'Вакансии',												// The text to be displayed for this menu item
+			'Job list settings', 					// The title to be displayed in the browser window for this page.
+			'Jobs',												// The text to be displayed for this menu item
 			'manage_options',										// Which type of users can see this menu item
 			'wvcl_options',											// The unique ID - that is, the slug - for this menu item
 			array( $this, 'render_settings_page_content'),			// The name of the function to call when rendering this menu's page
@@ -96,7 +96,7 @@ class wvcl_Admin_Settings {
 		<!-- Create a header in the default WordPress 'wrap' container -->
 		<div class="wvcl-wrap wrap">
 
-			<h2><?php esc_html_e( 'Настройки списка вакансий', 'wvcl' ); ?></h2>
+			<h2><?php esc_html_e( 'Job list settings', 'company-vacancies' ); ?></h2>
 			<?php settings_errors(); ?>
 
 			<?php 
@@ -140,14 +140,14 @@ class wvcl_Admin_Settings {
 	public function head_hunter_callback() {
 		$options = get_option('wvcl_head_hunter');
 		echo '
-			<p>Скопируйте этот шорткод и вставьте его в свои записи, страницы или содержимое текстового виджета:</p>
+			<p>'.__( 'Copy this shortcode and paste it into your posts, pages, or text widget content:', 'company-vacancies' ).'</p>
 			<div class="shortcode">
 				<div>[vacancy recruitment="headhunter"]</div>
 				<div>
 					<span class="dashicons-before dashicons-admin-page" aria-hidden="true"></span>
 				</div>
 			</div>
-			<p>Внимание: неизвестные параметры и параметры с ошибкой в названии игнорируются</p>
+			<p>'.__( 'Attention: unknown parameters and parameters with an error in the name are ignored', 'company-vacancies' ).'</p>
 		';
 	} // end general_options_callback
 
@@ -167,7 +167,7 @@ class wvcl_Admin_Settings {
 
 		add_settings_section(
 			'description_section',
-			__( '', 'wvcl' ),
+			__( '', 'company-vacancies' ),
 			array( $this, 'description_callback'),
 			'wvcl_description'
 		);
@@ -185,174 +185,174 @@ class wvcl_Admin_Settings {
 
 		add_settings_section(
 			'head_hunter_section',
-			__( '', 'wvcl' ),
+			__( '', 'company-vacancies' ),
 			array( $this, 'head_hunter_callback'),
 			'wvcl_head_hunter'
 		);
 
 		add_settings_field(
-			'Текстовое поле',
-			__( 'Текстовое поле', 'wvcl' ),
+			'Text field',
+			__( 'Text field', 'company-vacancies' ),
 			array( $this, 'text_head_hunter'),
 			'wvcl_head_hunter',
 			'head_hunter_section'
 		);
 
 		add_settings_field(
-			'Область поиска',
-			__( 'Область поиска', 'wvcl' ),
+			'Search area',
+			__( 'Search area', 'company-vacancies' ),
 			array( $this, 'search_field_head_hunter'),
 			'wvcl_head_hunter',
 			'head_hunter_section'
 		);
 
 		add_settings_field(
-			'Опыт работы',
-			__( 'Опыт работы', 'wvcl' ),
+			'Work experience',
+			__( 'Work experience', 'company-vacancies' ),
 			array( $this, 'experience_head_hunter'),
 			'wvcl_head_hunter',
 			'head_hunter_section'
 		);
 
 		add_settings_field(
-			'Тип занятости',
-			__( 'Тип занятости', 'wvcl' ),
+			'Employment type',
+			__( 'Employment type', 'company-vacancies' ),
 			array( $this, 'employment_head_hunter'),
 			'wvcl_head_hunter',
 			'head_hunter_section'
 		);
 
 		add_settings_field(
-			'График работы',
-			__( 'График работы', 'wvcl' ),
+			'Schedule',
+			__( 'Schedule', 'company-vacancies' ),
 			array( $this, 'schedule_head_hunter'),
 			'wvcl_head_hunter',
 			'head_hunter_section'
 		);
 
 		add_settings_field(
-			'Регион',
-			__( 'Регион', 'wvcl' ),
+			'Region',
+			__( 'Region', 'company-vacancies' ),
 			array( $this, 'area_head_hunter'),
 			'wvcl_head_hunter',
 			'head_hunter_section'
 		);
 
 		add_settings_field(
-			'Ветка или станция метро',
-			__( 'Ветка или станция метро', 'wvcl' ),
+			'Line or metro station',
+			__( 'Line or metro station', 'company-vacancies' ),
 			array( $this, 'metro_head_hunter'),
 			'wvcl_head_hunter',
 			'head_hunter_section'
 		);
 
 		add_settings_field(
-			'Профобласть или специализация',
-			__( 'Профобласть или специализация', 'wvcl' ),
+			'Profession or specialization',
+			__( 'Profession or specialization', 'company-vacancies' ),
 			array( $this, 'specialization_head_hunter'),
 			'wvcl_head_hunter',
 			'head_hunter_section'
 		);
 
 		add_settings_field(
-			'Индустрия компании, разместившей вакансию',
-			__( 'Индустрия компании, разместившей вакансию', 'wvcl' ),
+			'Industry of the company that posted the job',
+			__( 'Industry of the company that posted the job', 'company-vacancies' ),
 			array( $this, 'industry_head_hunter'),
 			'wvcl_head_hunter',
 			'head_hunter_section'
 		);
 
 		add_settings_field(
-			'Идентификатор компании',
-			__( 'Идентификатор компании', 'wvcl' ),
+			'Company ID',
+			__( 'Company ID', 'company-vacancies' ),
 			array( $this, 'employer_id_head_hunter'),
 			'wvcl_head_hunter',
 			'head_hunter_section'
 		);
 
 		add_settings_field(
-			'Код валюты',
-			__( 'Код валюты', 'wvcl' ),
+			'Currency code',
+			__( 'Currency code', 'company-vacancies' ),
 			array( $this, 'currency_head_hunter'),
 			'wvcl_head_hunter',
 			'head_hunter_section'
 		);
 
 		add_settings_field(
-			'Размер заработной платы',
-			__( 'Размер заработной платы', 'wvcl' ),
+			'Salary',
+			__( 'Salary', 'company-vacancies' ),
 			array( $this, 'salary_head_hunter'),
 			'wvcl_head_hunter',
 			'head_hunter_section'
 		);
 
 		add_settings_field(
-			'Фильтр по меткам вакансий',
-			__( 'Фильтр по меткам вакансий', 'wvcl' ),
+			'Filter by job tags',
+			__( 'Filter by job tags', 'company-vacancies' ),
 			array( $this, 'label_head_hunter'),
 			'wvcl_head_hunter',
 			'head_hunter_section'
 		);
 
 		add_settings_field(
-			'Показывать вакансии только с указанием зарплаты',
-			__( 'Показывать вакансии только с указанием зарплаты', 'wvcl' ),
+			'Show jobs with salary only',
+			__( 'Show jobs with salary only', 'company-vacancies' ),
 			array( $this, 'only_with_salary_head_hunter'),
 			'wvcl_head_hunter',
 			'head_hunter_section'
 		);
 
 		add_settings_field(
-			'Количество дней, в пределах которых нужно найти ваканси',
-			__( 'Количество дней, в пределах которых нужно найти ваканси', 'wvcl' ),
+			'Number of days within which you need to find vacancies',
+			__( 'Number of days within which you need to find vacancies', 'company-vacancies' ),
 			array( $this, 'period_head_hunter'),
 			'wvcl_head_hunter',
 			'head_hunter_section'
 		);
 
 		add_settings_field(
-			'Дата, которая ограничивает снизу диапазон дат публикации вакансий',
-			__( 'Дата, которая ограничивает снизу диапазон дат публикации вакансий', 'wvcl' ),
+			'The date that lowers the date range for the publication of vacancies',
+			__( 'The date that lowers the date range for the publication of vacancies', 'company-vacancies' ),
 			array( $this, 'date_from_head_hunter'),
 			'wvcl_head_hunter',
 			'head_hunter_section'
 		);
 
 		add_settings_field(
-			'Дата, которая ограничивает сверху диапазон дат публикации вакансий',
-			__( 'Дата, которая ограничивает сверху диапазон дат публикации вакансий', 'wvcl' ),
+			'The date that limits the date range of the publication of vacancies from above',
+			__( 'The date that limits the date range of the publication of vacancies from above', 'company-vacancies' ),
 			array( $this, 'date_to_head_hunter'),
 			'wvcl_head_hunter',
 			'head_hunter_section'
 		);
 
 		add_settings_field(
-			'Возвращать ли кластеры для данного поиска',
-			__( 'Возвращать ли кластеры для данного поиска', 'wvcl' ),
+			'Whether to return clusters for a given search',
+			__( 'Whether to return clusters for a given search', 'company-vacancies' ),
 			array( $this, 'clusters_head_hunter'),
 			'wvcl_head_hunter',
 			'head_hunter_section'
 		);
 
 		add_settings_field(
-			'Возвращать ли описание использованных параметров поиска',
-			__( 'Возвращать ли описание использованных параметров поиска', 'wvcl' ),
+			'Whether to return a description of the search parameters used',
+			__( 'Whether to return a description of the search parameters used', 'company-vacancies' ),
 			array( $this, 'describe_arguments_head_hunter'),
 			'wvcl_head_hunter',
 			'head_hunter_section'
 		);
 
 		add_settings_field(
-			'Отключить автоматическое преобразование вакансий',
-			__( 'Отключить автоматическое преобразование вакансий', 'wvcl' ),
+			'Disable automatic job conversion',
+			__( 'Disable automatic job conversion', 'company-vacancies' ),
 			array( $this, 'no_magic_head_hunter'),
 			'wvcl_head_hunter',
 			'head_hunter_section'
 		);
 
 		add_settings_field(
-			'Профессиональная роль',
-			__( 'Профессиональная роль', 'wvcl' ),
+			'Professional role',
+			__( 'Professional role', 'company-vacancies' ),
 			array( $this, 'professional_role_head_hunter'),
 			'wvcl_head_hunter',
 			'head_hunter_section'
@@ -373,7 +373,7 @@ class wvcl_Admin_Settings {
 		echo '
 		<input type="text" id="text" name="wvcl_head_hunter[text]" value="' . esc_attr($options['text']) . '" />
 		<div class="description" id="tagline-text">
-			<p>'.__( 'Доступен язык запросов, как и на основном сайте:', 'wvcl' ).' <a href="https://hh.ru/article/1175" rel="nofollow" target="_blank">https://hh.ru/article/1175</a>. '.__( 'Специально для этого поля есть', 'wvcl' ).' <a href="https://github.com/hhru/api/blob/master/docs/suggests.md#vacancy-search-keyword" rel="nofollow" target="_blank">'.__( 'автодополнение', 'wvcl' ).'</a>.</p>
+			<p>'.__( 'The query language is available, as on the main site:', 'company-vacancies' ).' <a href="https://hh.ru/article/1175" rel="nofollow" target="_blank">https://hh.ru/article/1175</a>. '.__( 'Specially for this field there is', 'company-vacancies' ).' <a href="https://github.com/hhru/api/blob/master/docs/suggests.md#vacancy-search-keyword" rel="nofollow" target="_blank">'.__( 'autocomplete', 'company-vacancies' ).'</a>.</p>
 		</div>';
 
 	} // end text_head_hunter
@@ -386,9 +386,9 @@ class wvcl_Admin_Settings {
 		echo '
 		<input type="text" id="search_field" name="wvcl_head_hunter[search_field]" value="' . esc_attr($options['search_field']) . '" />
 		<div class="description" id="tagline-search_field">
-			<p>'.__( 'Справочник с возможными значениями: <code>Область поиска в вакансии</code> в', 'wvcl' ).' <a href="https://application-interface.com/wvcl/dictionaries/" rel="nofollow" target="_blank">/dictionaries</a>.</p>
-			<p>'.__( 'По умолчанию, используются все поля.', 'wvcl' ).'</p>
-			<p>'.__( 'Возможно указание нескольких значений.', 'wvcl' ).'</p>
+			<p>'.__( 'Reference with possible values: <code>Job Search Area</code> in', 'company-vacancies' ).' <a href="https://application-interface.com/wvcl/dictionaries/" rel="nofollow" target="_blank">/dictionaries</a>.</p>
+			<p>'.__( 'By default, all fields are used.', 'company-vacancies' ).'</p>
+			<p>'.__( 'Multiple values may be specified.', 'company-vacancies' ).'</p>
 		</div>';
 
 	} // end search_field_head_hunter
@@ -401,7 +401,7 @@ class wvcl_Admin_Settings {
 		echo '
 		<input type="text" id="experience" name="wvcl_head_hunter[experience]" value="' . esc_attr($options['experience']) . '" />
 		<div class="description" id="tagline-experience">
-			<p>'.__( 'Необходимо передавать <code>id</code> из справочника <code>Опыт работы</code> в', 'wvcl' ).' <a href="https://application-interface.com/wvcl/dictionaries/" rel="nofollow" target="_blank">/dictionaries</a>.</p>
+			<p>'.__( 'It is necessary to transfer the <code>id</code> from the <code>Work Experience</code> directory to', 'company-vacancies' ).' <a href="https://application-interface.com/wvcl/dictionaries/" rel="nofollow" target="_blank">/dictionaries</a>.</p>
 		</div>';
 
 	} // end experience_head_hunter
@@ -414,8 +414,8 @@ class wvcl_Admin_Settings {
 		echo '
 			<input type="text" id="employment" name="wvcl_head_hunter[employment]" value="' . esc_attr($options['employment']) . '" />
 			<div class="description" id="tagline-schedule">
-				<p>'.__( 'Необходимо передавать <code>id</code> из справочника <code>Тип занятости</code> в', 'wvcl' ).' <a href="https://application-interface.com/wvcl/dictionaries/" rel="nofollow" target="_blank">/dictionaries</a>.</p>
-				<p>'.__( 'Возможно указание нескольких значений.', 'wvcl' ).'</p>
+				<p>'.__( 'It is necessary to pass <code>id</code> from the <code>Employment type</code> directory to', 'company-vacancies' ).' <a href="https://application-interface.com/wvcl/dictionaries/" rel="nofollow" target="_blank">/dictionaries</a>.</p>
+				<p>'.__( 'Multiple values may be specified.', 'company-vacancies' ).'</p>
 			</div>';
 
 	} // end employment_head_hunter
@@ -428,8 +428,8 @@ class wvcl_Admin_Settings {
 		echo '
 			<input type="text" id="schedule" name="wvcl_head_hunter[schedule]" value="' . esc_attr($options['schedule']) . '" />
 			<div class="description" id="tagline-schedule">
-				<p>'.__( 'Необходимо передавать <code>id</code> из справочника <code>График работы</code> в', 'wvcl' ).' <a href="https://application-interface.com/wvcl/dictionaries/" rel="nofollow" target="_blank">/dictionaries</a>.</p>
-				<p>'.__( 'Возможно указание нескольких значений.', 'wvcl' ).'</p>
+				<p>'.__( 'It is necessary to transfer the <code>id</code> from the <code>Work Schedule</code> directory to', 'company-vacancies' ).' <a href="https://application-interface.com/wvcl/dictionaries/" rel="nofollow" target="_blank">/dictionaries</a>.</p>
+				<p>'.__( 'Multiple values may be specified.', 'company-vacancies' ).'</p>
 			</div>';
 
 	} // end schedule_head_hunter
@@ -442,8 +442,8 @@ class wvcl_Admin_Settings {
 		echo '
 			<input type="text" id="area" name="wvcl_head_hunter[area]" value="' . esc_attr($options['area']) . '" />
 			<div class="description" id="tagline-area">
-				<p>'.__( 'Необходимо передавать <code>id</code> из справочника', 'wvcl' ).' <a href="https://application-interface.com/wvcl/areas/" rel="nofollow" target="_blank">/areas</a>.</p>
-				<p>'.__( 'Возможно указание нескольких значений.', 'wvcl' ).'</p>
+				<p>'.__( 'It is necessary to pass <code>id</code> from the directory', 'company-vacancies' ).' <a href="https://application-interface.com/wvcl/areas/" rel="nofollow" target="_blank">/areas</a>.</p>
+				<p>'.__( 'Multiple values may be specified.', 'company-vacancies' ).'</p>
 			</div>';
 
 	} // end area_head_hunter
@@ -456,8 +456,8 @@ class wvcl_Admin_Settings {
 		echo '
 			<input type="text" id="metro" name="wvcl_head_hunter[metro]" value="' . esc_attr($options['metro']) . '" />
 			<div class="description" id="tagline-metro">
-				<p>'.__( 'Необходимо передавать <code>id</code> из справочника', 'wvcl' ).' <a href="https://application-interface.com/wvcl/metro/" rel="nofollow" target="_blank">/metro</a>.</p>
-				<p>'.__( 'Возможно указание нескольких значений.', 'wvcl' ).'</p>
+				<p>'.__( 'It is necessary to pass <code>id</code> from the directory', 'company-vacancies' ).' <a href="https://application-interface.com/wvcl/metro/" rel="nofollow" target="_blank">/metro</a>.</p>
+				<p>'.__( 'Multiple values may be specified.', 'company-vacancies' ).'</p>
 			</div>';
 
 	} // end metro_head_hunter
@@ -470,8 +470,8 @@ class wvcl_Admin_Settings {
 		echo '
 			<input type="text" id="specialization" name="wvcl_head_hunter[specialization]" value="' . esc_attr($options['specialization']) . '" />
 			<div class="description" id="tagline-specialization">
-				<p>'.__( 'Необходимо передавать <code>id</code> из справочника', 'wvcl' ).' <a href="https://application-interface.com/wvcl/specializations/" rel="nofollow" target="_blank">/specializations</a>.</p>
-				<p>'.__( 'Возможно указание нескольких значений.', 'wvcl' ).'</p>
+				<p>'.__( 'It is necessary to pass <code>id</code> from the directory', 'company-vacancies' ).' <a href="https://application-interface.com/wvcl/specializations/" rel="nofollow" target="_blank">/specializations</a>.</p>
+				<p>'.__( 'Multiple values may be specified.', 'company-vacancies' ).'</p>
 			</div>';
 
 	} // end specialization_head_hunter
@@ -484,8 +484,8 @@ class wvcl_Admin_Settings {
 		echo '
 			<input type="text" id="industry" name="wvcl_head_hunter[industry]" value="' . esc_attr($options['industry']) . '" />
 			<div class="description" id="tagline-industry">
-				<p>'.__( 'Необходимо передавать <code>id</code> из справочника', 'wvcl' ).' <a href="https://application-interface.com/wvcl/industries/" rel="nofollow" target="_blank">/industries</a>.</p>
-				<p>'.__( 'Возможно указание нескольких значений.', 'wvcl' ).'</p>
+				<p>'.__( 'It is necessary to pass <code>id</code> from the directory', 'company-vacancies' ).' <a href="https://application-interface.com/wvcl/industries/" rel="nofollow" target="_blank">/industries</a>.</p>
+				<p>'.__( 'Multiple values may be specified.', 'company-vacancies' ).'</p>
 			</div>';
 			
 	} // end industry_head_hunter
@@ -498,9 +498,9 @@ class wvcl_Admin_Settings {
 		echo '
 			<input type="text" id="employer_id" name="wvcl_head_hunter[employer_id]" value="' . esc_attr($options['employer_id']) . '" />
 			<div class="description" id="tagline-employer_id">
-				<p>'.__( 'Идентификатор', 'wvcl' ).' <a href="https://github.com/hhru/api/blob/master/docs/employers.md" rel="nofollow" target="_blank">'.__( 'компании', 'wvcl' ).'</a></p>
-				<p>'.__( 'Идентификатор компании так же можно посмотреть в адресной строке, например https://hh.ru/employer/<code>1455</code>', 'wvcl' ).'</p>
-				<p>'.__( 'Возможно указание нескольких значений.', 'wvcl' ).'</p>
+				<p>'.__( 'Identifier', 'company-vacancies' ).' <a href="https://github.com/hhru/api/blob/master/docs/employers.md" rel="nofollow" target="_blank">'.__( 'companies', 'company-vacancies' ).'</a></p>
+				<p>'.__( 'The company ID can also be viewed in the address bar, for example https://hh.ru/employer/<code>1455</code>', 'company-vacancies' ).'</p>
+				<p>'.__( 'Multiple values may be specified.', 'company-vacancies' ).'</p>
 			</div>';
 
 	} // end employer_id_head_hunter
@@ -513,8 +513,8 @@ class wvcl_Admin_Settings {
 		echo '
 			<input type="text" id="currency" name="wvcl_head_hunter[currency]" value="' . esc_attr($options['currency']) . '" />
 			<div class="description" id="tagline-currency">
-				<p>'.__( 'Справочник с возможными значениями: <code>Код валюты</code> (ключ <code>code</code>) в', 'wvcl' ).' <a href="https://application-interface.com/wvcl/dictionaries/" rel="nofollow" target="_blank">/dictionaries</a>.</p>
-				<p>'.__( 'Имеет смысл указывать только совместно с параметром <code>Размер заработной платы</code>.', 'wvcl' ).'</p>
+				<p>'.__( 'Reference book with possible values: <code>Currency code</code> (key <code>code</code>) in', 'company-vacancies' ).' <a href="https://application-interface.com/wvcl/dictionaries/" rel="nofollow" target="_blank">/dictionaries</a>.</p>
+				<p>'.__( 'It makes sense to specify only together with the <code>Salary amount</code> parameter.', 'company-vacancies' ).'</p>
 			</div>';
 
 	} // end currency_head_hunter
@@ -527,11 +527,11 @@ class wvcl_Admin_Settings {
 		echo '
 			<input type="text" id="salary" name="wvcl_head_hunter[salary]" value="' . esc_attr($options['salary']) . '" />
 			<div class="description" id="tagline-salary">
-				<p>'.__( 'Если указано это поле, но не указано <code>Код валюты</code>, то используется значение <code>RUB</code> у <code>Код валюты</code>.', 'wvcl' ).'</p>
-				<p>'.__( 'При указании значения будут найдены вакансии, в которых вилка зарплаты близка к указанной в запросе.', 'wvcl' ).'</p>
-				<p>'.__( 'При этом значения пересчитываются по текущим курсам ЦБ РФ.', 'wvcl' ).'</p>
-				<p>'.__( 'Например, при указании <code>Размер заработной платы = 100 и Код валюты = EUR</code> будут найдены вакансии, где вилка зарплаты указана в рублях и после пересчёта в Евро близка к 100 EUR.', 'wvcl' ).'</p>
-				<p>'.__( 'По умолчанию будут также найдены вакансии, в которых вилка зарплаты не указана, чтобы такие вакансии отфильтровать, используйте <code>Показывать вакансии только с указанием зарплаты = да</code>.', 'wvcl' ).'</p>
+				<p>'.__( 'If this field is specified, but <code>Currency code</code> is not specified, then the <code>RUB</code> value of <code>Currency code</code> is used.', 'company-vacancies' ).'</p>
+				<p>'.__( 'When specifying a value, vacancies will be found in which the salary range is close to that specified in the request.', 'company-vacancies' ).'</p>
+				<p>'.__( 'In this case, the values are recalculated at the current exchange rates of the Central Bank of the Russian Federation.', 'company-vacancies' ).'</p>
+				<p>'.__( 'For example, if you specify <code>Salary = 100 and Currency code = EUR</code>, vacancies will be found where the salary bracket is indicated in rubles and, after conversion to Euro, is close to 100 EUR.', 'company-vacancies' ).'</p>
+				<p>'.__( 'By default, vacancies will also be found in which the salary fork is not specified. To filter such vacancies, use <code>Show vacancies with salary only = yes</code>.', 'company-vacancies' ).'</p>
 			</div>';
 
 	} // end salary_head_hunter
@@ -544,8 +544,8 @@ class wvcl_Admin_Settings {
 		echo '
 			<input type="text" id="label" name="wvcl_head_hunter[label]" value="' . esc_attr($options['label']) . '" />
 			<div class="description" id="tagline-label">
-				<p>'.__( 'Необходимо передавать <code>id</code> из справочника <code>Метки вакансии</code> в', 'wvcl' ).' <a href="https://application-interface.com/wvcl/dictionaries/" rel="nofollow" target="_blank">/dictionaries</a>.</p>
-				<p>'.__( 'Возможно указание нескольких значений.', 'wvcl' ).'</p>
+				<p>'.__( 'It is necessary to transfer the <code>id</code> from the <code>Vacancy Tags</code> directory to', 'company-vacancies' ).' <a href="https://application-interface.com/wvcl/dictionaries/" rel="nofollow" target="_blank">/dictionaries</a>.</p>
+				<p>'.__( 'Multiple values may be specified.', 'company-vacancies' ).'</p>
 			</div>';
 			
 	} // end label_head_hunter
@@ -557,12 +557,12 @@ class wvcl_Admin_Settings {
 		// Render the output
 		echo '
 			<select id="only_with_salary" name="wvcl_head_hunter[only_with_salary]">
-				<option value="false" ' . selected( esc_attr($options['only_with_salary']), 'false', false) . '>'. __( 'Нет', 'wvcl' ) . '</option>
-				<option value="true"' . selected( esc_attr($options['only_with_salary']), 'true', false) . '>' . __( 'Да', 'wvcl' ) . '</option>
+				<option value="false" ' . selected( esc_attr($options['only_with_salary']), 'false', false) . '>'. __( 'No', 'company-vacancies' ) . '</option>
+				<option value="true"' . selected( esc_attr($options['only_with_salary']), 'true', false) . '>' . __( 'Yes', 'company-vacancies' ) . '</option>
 			</select>
 			<div class="description" id="tagline-only_with_salary">
-				<p>'.__( 'Возможные значения: <code>Да</code> или <code>Нет</code>.', 'wvcl' ).'</p>
-				<p>'.__( 'По умолчанию, используется <code>Нет</code>.', 'wvcl' ).'</p>
+				<p>'.__( 'Possible values: <code>Yes</code> or <code>No</code>.', 'company-vacancies' ).'</p>
+				<p>'.__( 'By default, <code>No</code> is used.', 'company-vacancies' ).'</p>
 			</div>';
 
 	} // end only_with_salary_head_hunter
@@ -575,7 +575,7 @@ class wvcl_Admin_Settings {
 		echo '
 			<input type="text" id="period" name="wvcl_head_hunter[period]" value="' . esc_attr($options['period']) . '" />
 			<div class="description" id="tagline-period">
-				<p>'.__( 'Максимальное значение:', 'wvcl' ).' <code>30</code>.</p>
+				<p>'.__( 'Maximum value:', 'company-vacancies' ).' <code>30</code>.</p>
 			</div>';
 			
 	} // end period_head_hunter
@@ -588,9 +588,9 @@ class wvcl_Admin_Settings {
 		echo '
 			<input type="text" id="date_from" name="wvcl_head_hunter[date_from]" value="' . esc_attr($options['date_from']) . '" placeholder="___-__-__" />
 			<div class="description" id="tagline-date_from">
-				<p>'.__( 'Нельзя передавать вместе с параметром <code>Количество дней, в пределах которых нужно найти ваканси</code>.', 'wvcl' ).'</p>
-				<p>'.__( 'Значение указывается в формате', 'wvcl' ).' <a href="https://github.com/hhru/api/blob/master/docs/general.md#date-format" rel="nofollow" target="_blank">ISO 8601</a> - <code>YYYY-MM-DD</code> '.__( 'или с точность до секунды', 'wvcl' ).' <code>YYYY-MM-DDThh:mm:ss±hhmm</code>.</p>
-				<p>'.__( 'Указанное значение будет округлено до ближайших 5 минут.', 'wvcl' ).'</p>
+				<p>'.__( 'Cannot be passed along with the <code>Number of days within which vacancies are to be found</code> parameter.', 'company-vacancies' ).'</p>
+				<p>'.__( 'The value is specified in the format', 'company-vacancies' ).' <a href="https://github.com/hhru/api/blob/master/docs/general.md#date-format" rel="nofollow" target="_blank">ISO 8601</a> - <code>YYYY-MM-DD</code> '.__( 'or to the nearest second', 'company-vacancies' ).' <code>YYYY-MM-DDThh:mm:ss±hhmm</code>.</p>
+				<p>'.__( 'The specified value will be rounded up to the nearest 5 minutes.', 'company-vacancies' ).'</p>
 			</div>';
 
 	} // end date_from_head_hunter
@@ -603,10 +603,10 @@ class wvcl_Admin_Settings {
 		echo '
 			<input type="text" id="date_to" name="wvcl_head_hunter[date_to]" value="' . esc_attr($options['date_to']) . '" placeholder="___-__-__" />
 			<div class="description" id="tagline-date_to">
-				<p>'.__( 'Необходимо передавать только в паре с параметром <code>Дата, которая ограничивает снизу диапазон дат публикации вакансий</code>.', 'wvcl' ).'</p>
-				<p>'.__( 'Нельзя передавать вместе с параметром <code>Количество дней, в пределах которых нужно найти ваканси</code>.', 'wvcl' ).'</p>
-				<p>'.__( 'Значение указывается в формате', 'wvcl' ).' <a href="https://github.com/hhru/api/blob/master/docs/general.md#date-format" rel="nofollow" target="_blank">ISO 8601</a> - <code>YYYY-MM-DD</code> '.__( 'или с точность до секунды', 'wvcl' ).' <code>YYYY-MM-DDThh:mm:ss±hhmm</code>.</p>
-				<p>'.__( 'Указанное значение будет округлено до ближайших 5 минут.', 'wvcl' ).'</p>
+				<p>'.__( 'It must be passed only in pair with the <code>Date parameter, which limits the range of vacancies publication dates from below</code>.', 'company-vacancies' ).'</p>
+				<p>'.__( 'Cannot be passed along with the <code>Number of days within which vacancies are to be found</code> parameter.', 'company-vacancies' ).'</p>
+				<p>'.__( 'The value is specified in the format', 'company-vacancies' ).' <a href="https://github.com/hhru/api/blob/master/docs/general.md#date-format" rel="nofollow" target="_blank">ISO 8601</a> - <code>YYYY-MM-DD</code> '.__( 'or to the nearest second', 'company-vacancies' ).' <code>YYYY-MM-DDThh:mm:ss±hhmm</code>.</p>
+				<p>'.__( 'The specified value will be rounded up to the nearest 5 minutes.', 'company-vacancies' ).'</p>
 			</div>';
 			
 	} // end date_to_head_hunter
@@ -619,8 +619,8 @@ class wvcl_Admin_Settings {
 		echo '
 			<input type="text" id="order_by" name="wvcl_head_hunter[order_by]" value="' . esc_attr($options['order_by']) . '" />
 			<div class="description" id="tagline-order_by">
-				<p>'.__( 'Справочник с возможными значениями: <code>vacancy_search_order</code> в', 'wvcl' ).' <a href="https://application-interface.com/wvcl/dictionaries/" rel="nofollow" target="_blank">/dictionaries</a>.</p>
-				<p>'.__( 'Если выбрана сортировка по удалённости от гео-точки <code>distance</code>, необходимо также задать её координаты', 'wvcl' ).' <code>sort_point_lat</code>,<code>sort_point_lng</code>.</p>
+				<p>'.__( 'Reference with possible values: <code>vacancy_search_order</code> in', 'company-vacancies' ).' <a href="https://application-interface.com/wvcl/dictionaries/" rel="nofollow" target="_blank">/dictionaries</a>.</p>
+				<p>'.__( 'If sorting by distance from the geo-point <code>distance</code> is selected, you must also specify its coordinates', 'company-vacancies' ).' <code>sort_point_lat</code>,<code>sort_point_lng</code>.</p>
 			</div>';
 			
 	} // end order_by_head_hunter
@@ -632,11 +632,11 @@ class wvcl_Admin_Settings {
 		// Render the output
 		echo '
 			<select id="clusters" name="wvcl_head_hunter[clusters]">
-				<option value="false" ' . selected( esc_attr($options['clusters']), 'false', false) . '>'. __( 'Нет', 'wvcl' ) . '</option>
-				<option value="true"' . selected( esc_attr($options['clusters']), 'true', false) . '>' . __( 'Да', 'wvcl' ) . '</option>
+				<option value="false" ' . selected( esc_attr($options['clusters']), 'false', false) . '>'. __( 'No', 'company-vacancies' ) . '</option>
+				<option value="true"' . selected( esc_attr($options['clusters']), 'true', false) . '>' . __( 'Yes', 'company-vacancies' ) . '</option>
 			</select>
 			<div class="description" id="tagline-clusters">
-				<p><a href="https://github.com/hhru/api/blob/master/docs/clusters.md" rel="nofollow" target="_blank">'.__( 'Кластеры для данного поиска', 'wvcl' ).'</a>, '.__( 'по умолчанию: <code>Нет</code>.', 'wvcl' ).'</p>
+				<p><a href="https://github.com/hhru/api/blob/master/docs/clusters.md" rel="nofollow" target="_blank">'.__( 'Clusters for a given search', 'company-vacancies' ).'</a>, '.__( 'default: <code>No</code>.', 'company-vacancies' ).'</p>
 			</div>';
 			
 	} // end clusters_head_hunter
@@ -648,11 +648,11 @@ class wvcl_Admin_Settings {
 		// Render the output
 		echo '
 			<select id="describe_arguments" name="wvcl_head_hunter[describe_arguments]">
-				<option value="false" ' . selected( esc_attr($options['describe_arguments']), 'false', false) . '>'. __( 'Нет', 'wvcl' ) . '</option>
-				<option value="true"' . selected( esc_attr($options['describe_arguments']), 'true', false) . '>' . __( 'Да', 'wvcl' ) . '</option>
+				<option value="false" ' . selected( esc_attr($options['describe_arguments']), 'false', false) . '>'. __( 'No', 'company-vacancies' ) . '</option>
+				<option value="true"' . selected( esc_attr($options['describe_arguments']), 'true', false) . '>' . __( 'Yes', 'company-vacancies' ) . '</option>
 			</select>
 			<div class="description" id="tagline-describe_arguments">
-				<p><a href="https://github.com/hhru/api/blob/master/docs/vacancies_search_arguments.md" rel="nofollow" target="_blank">'.__( 'Описание использованных параметров поиска', 'wvcl' ).'</a>, '.__( 'по умолчанию: <code>Нет</code>.', 'wvcl' ).'</p>
+				<p><a href="https://github.com/hhru/api/blob/master/docs/vacancies_search_arguments.md" rel="nofollow" target="_blank">'.__( 'Description of search parameters used', 'company-vacancies' ).'</a>, '.__( 'default: <code>No</code>.', 'company-vacancies' ).'</p>
 			</div>';
 			
 	} // end describe_arguments_head_hunter
@@ -664,13 +664,13 @@ class wvcl_Admin_Settings {
 		// Render the output
 		echo '
 			<select id="no_magic" name="wvcl_head_hunter[no_magic]">
-				<option value="false" ' . selected( esc_attr($options['no_magic']), 'false', false) . '>'. __( 'Нет', 'wvcl' ) . '</option>
-				<option value="true"' . selected( esc_attr($options['no_magic']), 'true', false) . '>' . __( 'Да', 'wvcl' ) . '</option>
+				<option value="false" ' . selected( esc_attr($options['no_magic']), 'false', false) . '>'. __( 'No', 'company-vacancies' ) . '</option>
+				<option value="true"' . selected( esc_attr($options['no_magic']), 'true', false) . '>' . __( 'Yes', 'company-vacancies' ) . '</option>
 			</select>
 			<div class="description" id="tagline-no_magic">
-				<p>'.__( 'Если значение <code>Да</code> – отключить автоматическое преобразование вакансий.', 'wvcl' ).'</p>
-				<p>'.__( 'По умолчанию – <code>Нет</code>. При включённом автоматическом преобразовании, будет предпринята попытка изменить текстовый запрос пользователя на набор параметров.', 'wvcl' ).'</p> 
-				<p>'.__( 'Например, запрос <code>Текстовое поле = москва бухгалтер 100500</code> будет преобразован в <code>Текстовое поле = бухгалтер и Показывать вакансии только с указанием зарплаты = Да и Регион = Москва и Размер заработной платы = 100500</code>.', 'wvcl' ).'</p>
+				<p>'.__( 'If the value is <code>Yes</code>, disable automatic conversion of vacancies.', 'company-vacancies' ).'</p>
+				<p>'.__( 'The default is <code>No</code>. When automatic conversion is enabled, an attempt will be made to change the user`s text query to a set of parameters.', 'company-vacancies' ).'</p> 
+				<p>'.__( 'For example, the query <code>Text field = Moscow accountant 100500</code> will be converted to <code>Text field = accountant and Show vacancies with salary only = Yes and Region = Moscow and Salary amount = 100500</code>.', 'company-vacancies' ).'</p>
 			</div>';
 			
 	} // end no_magic_head_hunter
@@ -683,9 +683,9 @@ class wvcl_Admin_Settings {
 		echo '
 			<input type="text" id="professional_role" name="wvcl_head_hunter[professional_role]" value="' . esc_attr($options['professional_role']) . '" />
 			<div class="description" id="tagline-professional_role">
-				<p>'.__( 'Необходимо передавать <code>id</code> из справочника', 'wvcl' ).' <a href="https://api.hh.ru/openapi/redoc#tag/Spravochniki/paths/~1professional_roles/get" rel="nofollow" target="_blank">/professional_roles</a>.</p>
-				<p>'.__( 'Возможно указание нескольких значений.', 'wvcl' ).'</p>
-				<p>'.__( 'Замена специализациям (параметр <code>Профобласть или специализация</code>).', 'wvcl' ).'</p>
+				<p>'.__( 'It is necessary to pass <code>id</code> from the directory', 'company-vacancies' ).' <a href="https://api.hh.ru/openapi/redoc#tag/Spravochniki/paths/~1professional_roles/get" rel="nofollow" target="_blank">/professional_roles</a>.</p>
+				<p>'.__( 'Multiple values may be specified.', 'company-vacancies' ).'</p>
+				<p>'.__( 'Replacement for specializations (<code>Professional area or specialization</code> parameter).', 'company-vacancies' ).'</p>
 			</div>';
 
 	} // end professional_role_head_hunter	
