@@ -22,6 +22,8 @@
  */
 class Wvcl_Activator {
 
+	public $recruitment;
+
 	/**
 	 * Short Description. (use period)
 	 *

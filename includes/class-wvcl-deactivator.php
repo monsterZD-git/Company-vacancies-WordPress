@@ -30,7 +30,11 @@ class Wvcl_Deactivator {
 	 * @since    1.0.0
 	 */
 	public static function deactivate() {
-
+		// При деактивации плагина, обязательно нужно удалить задачу:
+		register_deactivation_hook( __FILE__, 'wvcl_cron' );
+		function wvcl_cron(){
+			wp_unschedule_hook( 'wvcl_cron_vacancy' );
+		}
 	}
 
 }

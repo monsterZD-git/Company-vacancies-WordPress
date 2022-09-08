@@ -9,14 +9,14 @@
  * that starts the plugin.
  *
  * @link              https://vk.com/id554858695
- * @since             1.0.0
+ * @since             1.0.3
  * @package           Wvcl
  *
  * @wordpress-plugin
  * Plugin Name:       Company vacancies
  * Plugin URI:        https://ru.wordpress.org/plugins/company-vacancies/
  * Description:       The plugin is designed to display a list of vacancies on the site.
- * Version:           1.0.0
+ * Version:           1.0.3
  * Author:            Виктор Шугуров
  * Author URI:        https://vk.com/id554858695
  * License:           GPL-2.0+

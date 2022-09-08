@@ -59,12 +59,12 @@ class wvcl_Admin_Settings {
 
 		//Add the menu to the Plugins set of menu items
 		add_menu_page(
-			'Job list settings', 					// The title to be displayed in the browser window for this page.
-			'Jobs',												// The text to be displayed for this menu item
-			'manage_options',										// Which type of users can see this menu item
-			'wvcl_options',											// The unique ID - that is, the slug - for this menu item
-			array( $this, 'render_settings_page_content'),			// The name of the function to call when rendering this menu's page
-			'dashicons-groups'
+			__( 'Job list settings', 'company-vacancies' ),		// The title to be displayed in the browser window for this page.
+			__( 'Jobs', 'company-vacancies' ),					// The text to be displayed for this menu item
+			'manage_options',									// Which type of users can see this menu item
+			'wvcl_options',										// The unique ID - that is, the slug - for this menu item
+			array( $this, 'render_settings_page_content'),		// The name of the function to call when rendering this menu's page
+			'dashicons-groups'									// The icon dashicons this menu's page
 		);
 
 	}
@@ -92,6 +92,7 @@ class wvcl_Admin_Settings {
 	 * Renders a simple page to display for the theme menu defined above.
 	 */
 	public function render_settings_page_content() {
+		add_thickbox();
 		?>
 		<!-- Create a header in the default WordPress 'wrap' container -->
 		<div class="wvcl-wrap wrap">
@@ -386,7 +387,7 @@ class wvcl_Admin_Settings {
 		echo '
 		<input type="text" id="search_field" name="wvcl_head_hunter[search_field]" value="' . esc_attr($options['search_field']) . '" />
 		<div class="description" id="tagline-search_field">
-			<p>'.__( 'Reference with possible values: <code>Job Search Area</code> in', 'company-vacancies' ).' <a href="https://application-interface.com/wvcl/dictionaries/" rel="nofollow" target="_blank">/dictionaries</a>.</p>
+			<p>'.__( 'Reference with possible values: <code>Job Search Area</code> in', 'company-vacancies' ).' <a href="https://application-interface.com/wvcl/dictionaries/?TB_iframe&width=1140&height=600" class="thickbox" rel="nofollow" target="_blank">/dictionaries</a>.</p>
 			<p>'.__( 'By default, all fields are used.', 'company-vacancies' ).'</p>
 			<p>'.__( 'Multiple values may be specified.', 'company-vacancies' ).'</p>
 		</div>';
@@ -401,7 +402,7 @@ class wvcl_Admin_Settings {
 		echo '
 		<input type="text" id="experience" name="wvcl_head_hunter[experience]" value="' . esc_attr($options['experience']) . '" />
 		<div class="description" id="tagline-experience">
-			<p>'.__( 'It is necessary to transfer the <code>id</code> from the <code>Work Experience</code> directory to', 'company-vacancies' ).' <a href="https://application-interface.com/wvcl/dictionaries/" rel="nofollow" target="_blank">/dictionaries</a>.</p>
+			<p>'.__( 'It is necessary to transfer the <code>id</code> from the <code>Work Experience</code> directory to', 'company-vacancies' ).' <a href="https://application-interface.com/wvcl/dictionaries/?TB_iframe&width=1140&height=600" class="thickbox" rel="nofollow" target="_blank">/dictionaries</a>.</p>
 		</div>';
 
 	} // end experience_head_hunter
@@ -414,7 +415,7 @@ class wvcl_Admin_Settings {
 		echo '
 			<input type="text" id="employment" name="wvcl_head_hunter[employment]" value="' . esc_attr($options['employment']) . '" />
 			<div class="description" id="tagline-schedule">
-				<p>'.__( 'It is necessary to pass <code>id</code> from the <code>Employment type</code> directory to', 'company-vacancies' ).' <a href="https://application-interface.com/wvcl/dictionaries/" rel="nofollow" target="_blank">/dictionaries</a>.</p>
+				<p>'.__( 'It is necessary to pass <code>id</code> from the <code>Employment type</code> directory to', 'company-vacancies' ).' <a href="https://application-interface.com/wvcl/dictionaries/?TB_iframe&width=1140&height=600" class="thickbox" rel="nofollow" target="_blank">/dictionaries</a>.</p>
 				<p>'.__( 'Multiple values may be specified.', 'company-vacancies' ).'</p>
 			</div>';
 
@@ -428,7 +429,7 @@ class wvcl_Admin_Settings {
 		echo '
 			<input type="text" id="schedule" name="wvcl_head_hunter[schedule]" value="' . esc_attr($options['schedule']) . '" />
 			<div class="description" id="tagline-schedule">
-				<p>'.__( 'It is necessary to transfer the <code>id</code> from the <code>Work Schedule</code> directory to', 'company-vacancies' ).' <a href="https://application-interface.com/wvcl/dictionaries/" rel="nofollow" target="_blank">/dictionaries</a>.</p>
+				<p>'.__( 'It is necessary to transfer the <code>id</code> from the <code>Work Schedule</code> directory to', 'company-vacancies' ).' <a href="https://application-interface.com/wvcl/dictionaries/?TB_iframe&width=1140&height=600" class="thickbox" rel="nofollow" target="_blank">/dictionaries</a>.</p>
 				<p>'.__( 'Multiple values may be specified.', 'company-vacancies' ).'</p>
 			</div>';
 
@@ -442,7 +443,7 @@ class wvcl_Admin_Settings {
 		echo '
 			<input type="text" id="area" name="wvcl_head_hunter[area]" value="' . esc_attr($options['area']) . '" />
 			<div class="description" id="tagline-area">
-				<p>'.__( 'It is necessary to pass <code>id</code> from the directory', 'company-vacancies' ).' <a href="https://application-interface.com/wvcl/areas/" rel="nofollow" target="_blank">/areas</a>.</p>
+				<p>'.__( 'It is necessary to pass <code>id</code> from the directory', 'company-vacancies' ).' <a href="https://application-interface.com/wvcl/areas/?TB_iframe&width=1140&height=600" class="thickbox" rel="nofollow" target="_blank">/areas</a>.</p>
 				<p>'.__( 'Multiple values may be specified.', 'company-vacancies' ).'</p>
 			</div>';
 
@@ -456,7 +457,7 @@ class wvcl_Admin_Settings {
 		echo '
 			<input type="text" id="metro" name="wvcl_head_hunter[metro]" value="' . esc_attr($options['metro']) . '" />
 			<div class="description" id="tagline-metro">
-				<p>'.__( 'It is necessary to pass <code>id</code> from the directory', 'company-vacancies' ).' <a href="https://application-interface.com/wvcl/metro/" rel="nofollow" target="_blank">/metro</a>.</p>
+				<p>'.__( 'It is necessary to pass <code>id</code> from the directory', 'company-vacancies' ).' <a href="https://application-interface.com/wvcl/metro/?TB_iframe&width=1140&height=600" class="thickbox" rel="nofollow" target="_blank">/metro</a>.</p>
 				<p>'.__( 'Multiple values may be specified.', 'company-vacancies' ).'</p>
 			</div>';
 
@@ -470,7 +471,7 @@ class wvcl_Admin_Settings {
 		echo '
 			<input type="text" id="specialization" name="wvcl_head_hunter[specialization]" value="' . esc_attr($options['specialization']) . '" />
 			<div class="description" id="tagline-specialization">
-				<p>'.__( 'It is necessary to pass <code>id</code> from the directory', 'company-vacancies' ).' <a href="https://application-interface.com/wvcl/specializations/" rel="nofollow" target="_blank">/specializations</a>.</p>
+				<p>'.__( 'It is necessary to pass <code>id</code> from the directory', 'company-vacancies' ).' <a href="https://application-interface.com/wvcl/specializations/?TB_iframe&width=1140&height=600" class="thickbox" rel="nofollow" target="_blank">/specializations</a>.</p>
 				<p>'.__( 'Multiple values may be specified.', 'company-vacancies' ).'</p>
 			</div>';
 
@@ -484,7 +485,7 @@ class wvcl_Admin_Settings {
 		echo '
 			<input type="text" id="industry" name="wvcl_head_hunter[industry]" value="' . esc_attr($options['industry']) . '" />
 			<div class="description" id="tagline-industry">
-				<p>'.__( 'It is necessary to pass <code>id</code> from the directory', 'company-vacancies' ).' <a href="https://application-interface.com/wvcl/industries/" rel="nofollow" target="_blank">/industries</a>.</p>
+				<p>'.__( 'It is necessary to pass <code>id</code> from the directory', 'company-vacancies' ).' <a href="https://application-interface.com/wvcl/industries/?TB_iframe&width=1140&height=600" class="thickbox" rel="nofollow" target="_blank">/industries</a>.</p>
 				<p>'.__( 'Multiple values may be specified.', 'company-vacancies' ).'</p>
 			</div>';
 			
@@ -513,7 +514,7 @@ class wvcl_Admin_Settings {
 		echo '
 			<input type="text" id="currency" name="wvcl_head_hunter[currency]" value="' . esc_attr($options['currency']) . '" />
 			<div class="description" id="tagline-currency">
-				<p>'.__( 'Reference book with possible values: <code>Currency code</code> (key <code>code</code>) in', 'company-vacancies' ).' <a href="https://application-interface.com/wvcl/dictionaries/" rel="nofollow" target="_blank">/dictionaries</a>.</p>
+				<p>'.__( 'Reference book with possible values: <code>Currency code</code> (key <code>code</code>) in', 'company-vacancies' ).' <a href="https://application-interface.com/wvcl/dictionaries/?TB_iframe&width=1140&height=600" class="thickbox" rel="nofollow" target="_blank">/dictionaries</a>.</p>
 				<p>'.__( 'It makes sense to specify only together with the <code>Salary amount</code> parameter.', 'company-vacancies' ).'</p>
 			</div>';
 
@@ -544,7 +545,7 @@ class wvcl_Admin_Settings {
 		echo '
 			<input type="text" id="label" name="wvcl_head_hunter[label]" value="' . esc_attr($options['label']) . '" />
 			<div class="description" id="tagline-label">
-				<p>'.__( 'It is necessary to transfer the <code>id</code> from the <code>Vacancy Tags</code> directory to', 'company-vacancies' ).' <a href="https://application-interface.com/wvcl/dictionaries/" rel="nofollow" target="_blank">/dictionaries</a>.</p>
+				<p>'.__( 'It is necessary to transfer the <code>id</code> from the <code>Vacancy Tags</code> directory to', 'company-vacancies' ).' <a href="https://application-interface.com/wvcl/dictionaries/?TB_iframe&width=1140&height=600" class="thickbox" rel="nofollow" target="_blank">/dictionaries</a>.</p>
 				<p>'.__( 'Multiple values may be specified.', 'company-vacancies' ).'</p>
 			</div>';
 			
@@ -619,7 +620,7 @@ class wvcl_Admin_Settings {
 		echo '
 			<input type="text" id="order_by" name="wvcl_head_hunter[order_by]" value="' . esc_attr($options['order_by']) . '" />
 			<div class="description" id="tagline-order_by">
-				<p>'.__( 'Reference with possible values: <code>vacancy_search_order</code> in', 'company-vacancies' ).' <a href="https://application-interface.com/wvcl/dictionaries/" rel="nofollow" target="_blank">/dictionaries</a>.</p>
+				<p>'.__( 'Reference with possible values: <code>vacancy_search_order</code> in', 'company-vacancies' ).' <a href="https://application-interface.com/wvcl/dictionaries/?TB_iframe&width=1140&height=600" class="thickbox" rel="nofollow" target="_blank">/dictionaries</a>.</p>
 				<p>'.__( 'If sorting by distance from the geo-point <code>distance</code> is selected, you must also specify its coordinates', 'company-vacancies' ).' <code>sort_point_lat</code>,<code>sort_point_lng</code>.</p>
 			</div>';
 			

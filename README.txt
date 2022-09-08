@@ -4,7 +4,7 @@ Donate link: https://vk.com/id554858695
 Tags: vacancy, jobs, headhunter
 Requires at least: 3.0.1
 Tested up to: 6.0
-Stable tag: 1.0.0
+Stable tag: 1.0.3
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -39,9 +39,14 @@ e.g.
 
 == Frequently Asked Questions ==
 
-= The plugin works through the official HeadHunter API =
+= The plugin works through the official HeadHunter API? =
 
 Yes, that's right, the plugin works through the official HeadHunter API, all requests are sent to HeadHunter and the received response is recorded in the database of your site.
+
+= How often is the list of vacancies updated? =
+
+The plugin makes a request to update the list while saving the search parameters. The plugin also creates an event in WP Cron, which once a day updates the list of vacancies on your site.
+Please note that WP Cron is enabled on your site (it is enabled by default).
 
 == Screenshots ==
 
@@ -50,8 +55,17 @@ Yes, that's right, the plugin works through the official HeadHunter API, all req
 
 == Changelog ==
 
-= 1.0 =
+= 1.0.0 =
 * Release this plugin to the masses!
+
+= 1.0.1 =
+* Plugin translation added
+
+= 1.0.2 =
+* Directories open in a modal window
+
+= 1.0.3 =
+* Added WP Cron to update jobs daily
 
 == Upgrade Notice ==
 

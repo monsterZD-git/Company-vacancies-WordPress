@@ -82,7 +82,6 @@ class wvcl_Admin_Save_Settings {
 		// head_hunter
 		$this->recruitment = 'head_hunter';
 		$this->options = array_diff(get_option('wvcl_head_hunter'), array(''));
-		
 		$this->wvcl_public_page();
 		for($i = 0; $i < $this->pages; $i++){
 			$this->page = $i;
@@ -91,8 +90,49 @@ class wvcl_Admin_Save_Settings {
 		
 		$this->save_plugin_options_db();
 
+		// включаем крон задачу, если она еще не включена.
+		// Лучше это делать один раз при активации плагина, например
+		if ( ! wp_next_scheduled( 'wvcl_cron_vacancy' ) ) {
+			wp_schedule_event( time(), 'daily', 'wvcl_cron_vacancy' );
+		}
+
+		// добавляем крон хук
+		add_action( 'wvcl_cron_vacancy', function() {
+
+			global $wpdb;
+
+			// head_hunter
+			$this->recruitment = 'head_hunter';
+
+			switch ($this->recruitment) {
+				case 'head_hunter':
+					$recruitment = esc_sql( 'headhunter' );
+					break;
+			}
+
+			if(isset($recruitment)) {
+				$table_name = esc_sql( $wpdb->prefix . "wvcl" );
+				$sql = $wpdb->prepare( "SELECT * FROM $table_name WHERE recruitment = %s", $recruitment );
+				$get_results = $wpdb->get_results( $sql );
+
+				if(count($get_results) > 0){
+					
+					parse_str($get_results[0]->options, $options);
+					$this->options = $options;
+					
+					$this->wvcl_public_page();
+					for($i = 0; $i < $this->pages; $i++){
+						$this->page = $i;
+						$this->wvcl_public_list();
+					}
+
+					$wpdb->update( $table_name, [ 'pages' => sanitize_text_field($this->pages), 'found' => sanitize_text_field($this->found), 'result' => serialize($this->result) ], [ 'id' => sanitize_text_field($get_results[0]->id) ] );
+				} 	
+			}
+		});
+		
+
 	}
-	
 
 	public function save_plugin_options_db() {
 
@@ -112,7 +152,7 @@ class wvcl_Admin_Save_Settings {
 			if(count($get_results) > 0){
 				$update_date = $get_results[0]->update_date;
 				$update_date_time = strtotime($update_date);
-				$update_date_time += 3600 * 24 * 3;
+				$update_date_time += 3600 * 24;
 				$current_date_time = strtotime(gmdate('Y-m-d H:i:s')); 
 				if($update_date_time < $current_date_time || $get_results[0]->options != http_build_query($this->options)){
 					$wpdb->update( $table_name, [ 'recruitment' => sanitize_text_field($recruitment), 'pages' => sanitize_text_field($this->pages), 'found' => sanitize_text_field($this->found), 'result' => serialize($this->result), 'options' => http_build_query($this->options) ], [ 'id' => sanitize_text_field($get_results[0]->id) ] );
@@ -125,7 +165,7 @@ class wvcl_Admin_Save_Settings {
 	}
 	
 	public function wvcl_public_page() {
-			
+				
 		switch ($this->recruitment) {
 			case 'head_hunter':
 				$recruitment = esc_sql( 'headhunter' );
