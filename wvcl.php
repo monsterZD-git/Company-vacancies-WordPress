@@ -9,14 +9,14 @@
  * that starts the plugin.
  *
  * @link              https://vk.com/id554858695
- * @since             1.0.3
+ * @since             1.0.4
  * @package           Wvcl
  *
  * @wordpress-plugin
  * Plugin Name:       Company vacancies
  * Plugin URI:        https://ru.wordpress.org/plugins/company-vacancies/
  * Description:       The plugin is designed to display a list of vacancies on the site.
- * Version:           1.0.3
+ * Version:           1.0.4
  * Author:            Виктор Шугуров
  * Author URI:        https://vk.com/id554858695
  * License:           GPL-2.0+
@@ -32,10 +32,10 @@ if ( ! defined( 'WPINC' ) ) {
 
 /**
  * Currently plugin version.
- * Start at version 1.0.0 and use SemVer - https://semver.org
+ * Start at version 1.0.4 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'WVCL_VERSION', '1.0.0' );
+define( 'WVCL_VERSION', '1.0.4' );
 
 /**
  * The code that runs during plugin activation.
@@ -71,7 +71,7 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-wvcl.php';
  * then kicking off the plugin from this point in the file does
  * not affect the page life cycle.
  *
- * @since    1.0.0
+ * @since    1.0.4
  */
 function run_wvcl() {
 

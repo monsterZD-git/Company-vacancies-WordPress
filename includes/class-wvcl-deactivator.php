@@ -4,7 +4,7 @@
  * Fired during plugin deactivation
  *
  * @link       https://vk.com/id554858695
- * @since      1.0.0
+ * @since      1.0.4
  *
  * @package    Wvcl
  * @subpackage Wvcl/includes
@@ -15,7 +15,7 @@
  *
  * This class defines all code necessary to run during the plugin's deactivation.
  *
- * @since      1.0.0
+ * @since      1.0.4
  * @package    Wvcl
  * @subpackage Wvcl/includes
  * @author     Виктор Шугуров <oren_rebel@mail.ru>
@@ -27,7 +27,7 @@ class Wvcl_Deactivator {
 	 *
 	 * Long Description.
 	 *
-	 * @since    1.0.0
+	 * @since    1.0.4
 	 */
 	public static function deactivate() {
 		// При деактивации плагина, обязательно нужно удалить задачу:

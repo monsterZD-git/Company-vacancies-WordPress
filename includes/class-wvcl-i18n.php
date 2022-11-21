@@ -7,7 +7,7 @@
  * so that it is ready for translation.
  *
  * @link       https://vk.com/id554858695
- * @since      1.0.0
+ * @since      1.0.4
  *
  * @package    Wvcl
  * @subpackage Wvcl/includes
@@ -19,7 +19,7 @@
  * Loads and defines the internationalization files for this plugin
  * so that it is ready for translation.
  *
- * @since      1.0.0
+ * @since      1.0.4
  * @package    Wvcl
  * @subpackage Wvcl/includes
  * @author     Виктор Шугуров <oren_rebel@mail.ru>
@@ -30,7 +30,7 @@ class Wvcl_i18n {
 	/**
 	 * Load the plugin text domain for translation.
 	 *
-	 * @since    1.0.0
+	 * @since    1.0.4
 	 */
 	public function load_plugin_textdomain() {
 

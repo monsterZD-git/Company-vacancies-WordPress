@@ -4,7 +4,7 @@
  * The settings of the plugin.
  *
  * @link       https://vk.com/id554858695
- * @since      1.0.0
+ * @since      1.0.4
  *
  * @package    wvcl_Plugin
  * @subpackage wvcl_Plugin/admin
@@ -19,7 +19,7 @@ class wvcl_Admin_Settings {
 	/**
 	 * The ID of this plugin.
 	 *
-	 * @since    1.0.0
+	 * @since    1.0.4
 	 * @access   private
 	 * @var      string    $plugin_name    The ID of this plugin.
 	 */
@@ -28,7 +28,7 @@ class wvcl_Admin_Settings {
 	/**
 	 * The version of this plugin.
 	 *
-	 * @since    1.0.0
+	 * @since    1.0.4
 	 * @access   private
 	 * @var      string    $version    The current version of this plugin.
 	 */
@@ -40,7 +40,7 @@ class wvcl_Admin_Settings {
 	/**
 	 * Initialize the class and set its properties.
 	 *
-	 * @since    1.0.0
+	 * @since    1.0.4
 	 * @param      string    $plugin_name       The name of this plugin.
 	 * @param      string    $version    The version of this plugin.
 	 */

@@ -4,7 +4,7 @@
  * The settings of the plugin.
  *
  * @link       https://vk.com/id554858695
- * @since      1.0.0
+ * @since      1.0.4
  *
  * @package    wvcl_Plugin
  * @subpackage wvcl_Plugin/admin
@@ -19,7 +19,7 @@ class wvcl_Admin_Save_Settings {
 	/**
 	 * The ID of this plugin.
 	 *
-	 * @since    1.0.0
+	 * @since    1.0.4
 	 * @access   private
 	 * @var      string    $plugin_name    The ID of this plugin.
 	 */
@@ -28,7 +28,7 @@ class wvcl_Admin_Save_Settings {
 	/**
 	 * The version of this plugin.
 	 *
-	 * @since    1.0.0
+	 * @since    1.0.4
 	 * @access   private
 	 * @var      string    $version    The current version of this plugin.
 	 */
@@ -37,7 +37,7 @@ class wvcl_Admin_Save_Settings {
 	/**
 	 * The variables of this plugin.
 	 *
-	 * @since    1.0.0
+	 * @since    1.0.4
 	 * @access   public
 	 * @var      int   
 	 */
@@ -47,7 +47,7 @@ class wvcl_Admin_Save_Settings {
 	/**
 	 * The variables of this plugin.
 	 *
-	 * @since    1.0.0
+	 * @since    1.0.4
 	 * @access   public
 	 * @var      array    
 	 */
@@ -61,7 +61,7 @@ class wvcl_Admin_Save_Settings {
 	/**
 	 * Initialize the class and set its properties.
 	 *
-	 * @since    1.0.0
+	 * @since    1.0.4
 	 * @param      string    $plugin_name       The name of this plugin.
 	 * @param      string    $version    The version of this plugin.
 	 */
@@ -103,7 +103,7 @@ class wvcl_Admin_Save_Settings {
 
 			// head_hunter
 			$this->recruitment = 'head_hunter';
-
+			
 			switch ($this->recruitment) {
 				case 'head_hunter':
 					$recruitment = esc_sql( 'headhunter' );
@@ -121,7 +121,9 @@ class wvcl_Admin_Save_Settings {
 					$this->options = $options;
 					
 					$this->wvcl_public_page();
-					for($i = 0; $i < $this->pages; $i++){
+					$this->result = array();
+					
+					for($i = 1; $i <= $this->pages; $i++){
 						$this->page = $i;
 						$this->wvcl_public_list();
 					}
